@@ -1,0 +1,25 @@
+name: Change
+description: A change to the register, the file format, or the screens
+title: ""
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: Which session is awkward, and for whom.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: The change you want
+    validations:
+      required: true
+  - type: textarea
+    id: format
+    attributes:
+      label: File format
+      description: Say whether version 1 files must keep loading.
+    validations:
+      required: true

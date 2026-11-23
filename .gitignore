@@ -1,0 +1,14 @@
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+Testing/
+CTestTestfile.cmake
+cmake_install.cmake
+*.o
+*.a
+*.tmp
+students.srms
+.cache/
+*.cast
+!docs/assets/**

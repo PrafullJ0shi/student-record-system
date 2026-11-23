@@ -1,0 +1,33 @@
+name: Defect
+description: A record, a file, or a screen behaves incorrectly
+title: ""
+labels: []
+body:
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      description: Include the command and the text the program printed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of srms --version
+      placeholder: srms 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: Register excerpt
+      description: A minimal file that shows the problem, if you can share it.
+    validations:
+      required: false
