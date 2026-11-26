@@ -135,6 +135,23 @@ docs/assets/      plates, screens, the session
 - Paging when a cohort is longer than the screen.
 - A textual diff of two register files.
 
+## V2 roadmap
+
+Planned for V2, not shipped. The items above stay on the list; V2 adds ten features aimed at the people who keep marks for a living and the developers who connect SRMS to other tools. The core stays a single C11 program under the MIT licence.
+
+1. **Configurable grading schemes.** Grade bands, a 10-point grade-point scale, credit weights per paper and pass rules (for example, a practical that must be passed on its own), stored in the register header. *Users:* one program for many institutions' rules.
+2. **Tamper-evident change journal.** Every edit is appended to a hash-chained log with the operator name and time, and `srms --verify` proves the history is intact. *Users:* an answer to "who changed this mark, and when".
+3. **Encryption at rest.** An optional passphrase that encrypts the register with a modern, well-reviewed library and a slow key-derivation function. *Users:* a lost laptop does not leak a cohort's marks.
+4. **Result cards.** A printable per-student sheet with marks, grade, rank and percentile, as HTML or plain text. *Users:* hand out results straight from the register.
+5. **Moderation checks.** Flags for papers whose mean is far from the others, marks bunched just above the pass mark, identical rows and statistical outliers (median-based, so one extreme mark does not hide the rest). *Users:* catch entry errors and marking drift before results go out.
+6. **Merge registers from several markers.** Each examiner enters one paper; `srms --merge` combines the files and lists every conflict instead of guessing. *Users:* parallel entry without a server.
+7. **libsrms and bindings.** The storage, validation and statistics code as a stable C library with a documented API, plus Python bindings and JSON export. *Developers:* read and write `.srms` files from other tools safely.
+8. **Full-screen terminal interface.** Edit a cell in place, scroll long cohorts and use keyboard shortcuts, with a plain mode for screen readers. *Users:* faster daily entry.
+9. **Browser viewer.** A WebAssembly build that opens a `.srms` file locally in the browser for read-only statistics; nothing is uploaded. *Users:* share results with someone who cannot run a terminal program.
+10. **Hosted backup and sync edition.** For tuition centres and small schools: encrypted backups and sync across a few machines, with support. *Revenue:* a paid hosted service on top of the free core; the file format stays open.
+
+**Order.** V2.0: items 1, 2, 4, 5 and 7. V2.1: items 3, 6, 8, 9 and 10.
+
 ## License
 
 [MIT](LICENSE). Copyright (c) 2026 Prafull Joshi.
